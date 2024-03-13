@@ -13,32 +13,34 @@ public class SnackLadder {
 		private static final int SNAKE = 2;
 
 		public void playGame() {
-		System.out.println("The position of player is "+playerPosition);
-		int dieNo = random.nextInt(6) + 1;
-		option = random.nextInt(3); 
-		
-		switch(option) {
-		case STAY:
-			System.out.println("STAY "+option);
+			while(playerPosition != 100) {
+				System.out.println("The position of player is "+playerPosition);
+				int dieNo = random.nextInt(6) + 1;
+				option = random.nextInt(3); 
+				
+				switch(option) {
+				case STAY:
+					System.out.println("STAY "+option);
+					
+					break;
+				case LADDER:
+					System.out.println("LADDER "+option);
+					playerPosition += dieNo;
+					break;
+				case SNAKE:
+					System.out.println("SNAKE "+option);
+					playerPosition -= dieNo;
+					if(playerPosition < 0) {
+						playerPosition = 0;
+						}
+					break;
+				}
 			
-			break;
-		case LADDER:
-			System.out.println("LADDER "+option);
-			playerPosition += dieNo;
-			break;
-		case SNAKE:
-			System.out.println("SNAKE "+option);
-			playerPosition -= dieNo;
-			if(playerPosition < 0) {
-				playerPosition = 0;
-				break;
-			}
-
-		}
-		
-		System.out.println("Number of die "+dieNo);
-		System.out.println("The new position of a player is "+playerPosition);
-		
+				System.out.println("Number of die "+dieNo);
+				System.out.println("The new position of a player is " +playerPosition);
+				System.out.println("----------------------------------");
+				}
+			
 		}
 	
 		public static void main(String[] args) {
