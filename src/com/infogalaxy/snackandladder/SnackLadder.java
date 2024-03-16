@@ -16,9 +16,9 @@ public class SnackLadder {
 		public void playGame() {
 			while(playerPosition != WINNING_NO) {
 				System.out.println("The position of player is "+playerPosition);
+				
 				int dieNo = random.nextInt(6) + 1;
 				option = random.nextInt(3); 
-				
 				switch(option) {
 				case STAY:
 					System.out.println("STAY "+option);
@@ -39,7 +39,7 @@ public class SnackLadder {
 						}
 					break;
 				}
-			
+				System.out.println("The value of a option is = " +option);
 				System.out.println("Number of die "+dieNo);
 				System.out.println("The new position of a player is " +playerPosition);
 				System.out.println("----------------------------------");
